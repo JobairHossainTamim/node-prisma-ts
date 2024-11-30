@@ -7,7 +7,7 @@ import { asyncWrapper } from "~/middleware/asyncWrapper";
 
 const useRoute= express.Router();
 
-useRoute.post("/user",validateRequest(userValidate),asyncWrapper(userController.createUser));
+useRoute.post("/register",validateRequest(userValidate),asyncWrapper(userController.createUser));
 
 
 export default useRoute;
