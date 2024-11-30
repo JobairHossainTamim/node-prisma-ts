@@ -7,6 +7,10 @@ export abstract class customError extends Error  {
     constructor(message:string) {
         super(message);
     }
+
+   
+
+    
 }
 
 export class BadRequestException extends customError{
