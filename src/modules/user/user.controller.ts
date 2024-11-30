@@ -8,26 +8,15 @@ import { BadRequestException, InternalServer } from "~/middleware/custom.error";
 
 
 const createUser =async(req:Request,res:Response,next:NextFunction)=>{
+   const {email,password ,firstName,lastName,avatar}=req.body;
 
-try {
-    
-
-    const {email,password ,firstName,lastName,avatar}=req.body;
-
-  
     // insert into db 
     const newUser:User = await prisma.user.create({
         data:{
             email,password,firstName,lastName,avatar
         }
-
     });
     res.status(HTTP_Status.CREATED).json(newUser);
-
-} catch (error:any) {
-next(new InternalServer(error.message));
-    
-}
 }
 
 
