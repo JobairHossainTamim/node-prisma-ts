@@ -51,7 +51,6 @@ const payload: IUser = {
   avatar: user.avatar,
   role: user.role,
   password: user.password, 
-
 };
   const accessToken:string= await generateToken(payload)
 
