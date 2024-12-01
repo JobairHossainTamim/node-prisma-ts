@@ -1,4 +1,4 @@
-import { User } from "@prisma/client";
+
 import { NextFunction, Request, Response } from "express"
 import { prisma } from "~/prisma";
 import { HTTP_Status } from "~/constant/http";
@@ -26,8 +26,7 @@ const createUser =async(req:Request,res:Response,next:NextFunction)=>{
           data: data,
         }
     );
-<<<<<<< HEAD
-=======
+
 }
 
 const loginUser= async(req:Request,res:Response,next:NextFunction)=>{
@@ -37,7 +36,7 @@ const loginUser= async(req:Request,res:Response,next:NextFunction)=>{
     message:"User Login Success",
     accessToken
   })
->>>>>>> category
+
 }
 
 

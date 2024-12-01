@@ -7,11 +7,11 @@ import { customError, NotFound } from "./middleware/custom.error";
 
 const appRoutes=(app:Application)=>{
     // user
-<<<<<<< HEAD
-    app.use("/api/v1/auth",useRoute);
-=======
+
+  
+
     app.use("/api/v1/user",useRoute);
->>>>>>> category
+
 
 
 

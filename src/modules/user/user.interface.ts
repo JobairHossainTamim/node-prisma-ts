@@ -1,5 +1,4 @@
 export interface IUser {
-<<<<<<< HEAD
     email: string;
     password?: string  | any; //Optional
     firstName: string;
@@ -9,13 +8,3 @@ export interface IUser {
     role?: string; // Optional
   }
   
-=======
-    id?: string;
-    firstName: string;
-    lastName:string;
-    email: string;
-    avatar:string;
-    password:string;
-    role?: string;
-  }
->>>>>>> category
