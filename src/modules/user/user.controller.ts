@@ -28,8 +28,23 @@ const createUser =async(req:Request,res:Response,next:NextFunction)=>{
     );
 }
 
+const loginUser= async(req:Request,res:Response,next:NextFunction)=>{
 
+ const accessToken= await userService.login(req.body);
+  res.status(HTTP_Status.CREATED).json({
+    message:"User Login Success",
+    accessToken
+  })
+}
+
+
+
+// Get Single User
+const getUser= async(req:Request,res:Response,next:NextFunction)=>{
+
+}
 export const userController ={
-createUser
+createUser,
+loginUser,getUser
 
 }

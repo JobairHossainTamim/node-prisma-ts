@@ -8,7 +8,6 @@ export function asyncWrapper(callback:any){
         try {
            await callback(req,res,next);
         } catch (error:any) {
-            
             next(new InternalServer(error.message))
         }
     }
