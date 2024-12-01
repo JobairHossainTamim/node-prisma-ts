@@ -7,3 +7,8 @@ export const userValidate = Joi.object({
     lastName: Joi.string().required(),
     avatar: Joi.optional(),
 });
+
+export const userLoginValidate = Joi.object({
+    email: Joi.string().email().required(),
+    password: Joi.string().required(),
+});

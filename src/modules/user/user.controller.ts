@@ -26,10 +26,35 @@ const createUser =async(req:Request,res:Response,next:NextFunction)=>{
           data: data,
         }
     );
+<<<<<<< HEAD
+=======
+}
+
+const loginUser= async(req:Request,res:Response,next:NextFunction)=>{
+
+ const accessToken= await userService.login(req.body);
+  res.status(HTTP_Status.CREATED).json({
+    message:"User Login Success",
+    accessToken
+  })
+>>>>>>> category
 }
 
 
+
+// Get Single User
+const getUser= async(req:Request,res:Response,next:NextFunction)=>{
+
+  return res.status(HTTP_Status.OK).json({
+    data:req.currentUser,
+    message:"Get Current User"
+  
+  })
+
+}
+
 export const userController ={
-createUser
+createUser,
+loginUser,getUser
 
 }
