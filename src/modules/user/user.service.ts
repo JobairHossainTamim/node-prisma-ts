@@ -1,6 +1,8 @@
 import { User } from "@prisma/client";
 import { prisma } from "~/prisma";
-import {  IUser } from "./user.interface";
+import { IUser } from "./user.interface";
+import hashPassword from "~/utils/hashPassword";
+
 
 
 
@@ -9,12 +11,12 @@ const addUser=async(reqBody:IUser)=>{
 
     const {email,password,firstName,lastName,avatar}=reqBody;
 
-    //   const hashedPassword = await hashPassword(password);
+      const hashedPassword = await hashPassword(password);
 
      // insert into db 
     const newUser:User = await prisma.user.create({
         data:{
-            email,password,firstName,lastName,avatar
+            email,password:hashedPassword,firstName,lastName,avatar
         }
     });
 

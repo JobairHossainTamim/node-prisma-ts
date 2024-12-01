@@ -12,6 +12,16 @@ const appRoutes=(app:Application)=>{
 
 
     // Global Error 
+    app.use((error: any, req: Request, res: Response, next: NextFunction):void | any => {
+          
+        return res.status(error.statusCode).json({
+            status: error.status,
+            statusCode: error.statusCode,
+            message: error.message,
+        });  
+}
+);
+
 
   
     app.use((error: any, req: Request, res: Response, next: NextFunction):void | any => {
