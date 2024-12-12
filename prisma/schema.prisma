@@ -19,14 +19,20 @@ model User {
   role Role @default(USER)
   isActive Boolean @default(true)
   avatar String
-
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
 }
 
-
 enum Role {
   USER
   ADMIN
+}
+
+// model category
+model Category{
+  id Int @id @default(autoincrement())
+  name String
+  icon String
+  status Boolean @default(true)
 }

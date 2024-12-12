@@ -1,5 +1,6 @@
 import { Application, NextFunction, Request, Response } from "express";
-import useRoute from "./modules/user/user.router";
+import user from "./modules/user/user.router";
+import category from "./modules/category/category.router";
 import { customError, NotFound } from "./middleware/custom.error";
 
 
@@ -10,7 +11,8 @@ const appRoutes=(app:Application)=>{
 
   
 
-    app.use("/api/v1/user",useRoute);
+    app.use("/api/v1/user",user);
+    app.use("/api/v1/category",category);
 
 
 
