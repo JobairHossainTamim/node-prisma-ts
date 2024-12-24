@@ -11,7 +11,10 @@ const useRoute= express.Router();
 
 
 useRoute.post("/",validateRequest(categoryValidate),asyncWrapper(categoryController.createCategory));
-
+useRoute.get("/",asyncWrapper(categoryController.getAll));
+useRoute.get("/:id",asyncWrapper(categoryController.get));
+useRoute.put("/:id",asyncWrapper(categoryController.update));
+useRoute.delete("/:id",asyncWrapper(categoryController.remove));
 
 
 export default useRoute;
