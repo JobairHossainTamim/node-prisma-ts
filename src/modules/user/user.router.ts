@@ -8,7 +8,7 @@ import { verifyUser } from "~/middleware/authMiddleware";
 
 const useRoute= express.Router();
 
-useRoute.post("/user",validateRequest(userValidate),asyncWrapper(userController.createUser));
+useRoute.post("/register",validateRequest(userValidate),asyncWrapper(userController.createUser));
 
 
 export default useRoute;
